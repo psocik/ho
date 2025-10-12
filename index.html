@@ -2,19 +2,22 @@
 layout: default
 title: Home
 ---
-<main class="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-900 text-white font-sans">
-    <div class="flex flex-col items-center justify-center w-full max-w-6xl py-12">
-        <!-- Main Logo Area: Now static, centered, and uses a large responsive max-width -->
-        <div class="mb-16 w-full flex justify-center">
-            <img src="{{ site.baseurl }}/hexops-logo.jpg" alt="{{ site.title }} Coming Soon" class="w-full max-w-5xl h-auto rounded-lg shadow-xl" onerror="this.onerror=null; this.src='https://placehold.co/400x150/0f172a/ffffff?text=Logo+Placeholder'">
-        </div>
+<main class="flex flex-col items-center justify-start min-h-screen bg-gray-900 text-white font-sans">
+    
+    <!-- Full-Width Logo Area: This section now takes the full width of the viewport -->
+    <div class="w-full flex justify-center py-16 px-4 bg-gray-900">
+        <img src="{{ site.baseurl }}/hexops-logo.png" alt="{{ site.title }} Coming Soon" class="w-full max-w-7xl h-auto rounded-lg shadow-xl" onerror="this.onerror=null; this.src='https://placehold.co/400x150/0f172a/ffffff?text=Logo+Placeholder'">
+    </div>
+
+    <!-- Main Content Container: Centered and width-constrained for the news section -->
+    <div class="flex flex-col items-center w-full max-w-6xl px-4">
 
         <!-- Latest Updates Section -->
         <h2 class="text-4xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-tight">
             Latest Updates
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {% for post in site.posts limit:3 %}
             <!-- Removed border and blue hover effects from the post card -->
             <div class="bg-gray-800 p-6 rounded-xl shadow-lg transition duration-300">
@@ -33,7 +36,7 @@ title: Home
     </div>
 
     <!-- Simple Footer -->
-    <footer class="mt-12 text-sm text-gray-500">
+    <footer class="mt-12 text-sm text-gray-500 py-6">
         &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.
     </footer>
 </main>
