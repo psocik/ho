@@ -5,7 +5,7 @@ title: Home
 <main class="flex flex-col items-center justify-start min-h-screen">
     
     <!-- Full-Width Logo Area: This section now takes the full width of the viewport -->
-    <div class="w-full flex justify-center py-16 px-4 bg-gray-900">
+    <div class="w-full flex justify-center py-16 px-4">
         <img src="{{ site.baseurl }}/hexops-logo.png" alt="{{ site.title }} Coming Soon" class="w-full max-w-7xl h-auto rounded-lg shadow-xl" onerror="this.onerror=null; this.src='https://placehold.co/400x150/0f172a/ffffff?text=Logo+Placeholder'">
     </div>
 
@@ -23,7 +23,7 @@ title: Home
                 <a href="{{ post.url | relative_url }}" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition duration-150">Read more →</a>
             </div>
             {% else %}
-            <div class="md:col-span-3 text-center p-8 bg-gray-800 rounded-xl">
+            <div class="md:col-span-3 text-center p-8 rounded-xl">
                 <p class="text-lg text-gray-400">No posts found. Add files to the <code>_posts</code> folder to see updates here!</p>
             </div>
             {% endfor %}
@@ -36,6 +36,7 @@ title: Home
         &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.
     </footer>
 </main>
+
 
 
 
