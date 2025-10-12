@@ -20,7 +20,7 @@ title: Home
                 <h3 class="text-xl font-semibold mb-2 text-cyan-400">{{ post.title }}</h3>
                 <p class="text-sm text-gray-400 mb-3">{{ post.date | date: "%b %-d, %Y" }}</p>
                 <p class="text-gray-300 mb-4">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-                <a href="{{ post.url }}" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition duration-150">Read more →</a>
+                <a href="{{ post.url | relative_url  }}" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition duration-150">Read more →</a>
             </div>
             {% else %}
             <div class="md:col-span-3 text-center p-8 rounded-xl">
@@ -36,6 +36,7 @@ title: Home
         &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.
     </footer>
 </main>
+
 
 
 
