@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Jekyll automatically uses the title variable from _config.yml and page.title from the front matter -->
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS via CDN - Best practice for GitHub Pages -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for dark background and font */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Dark background inspired by the logo image */
+            background-color: #0d1117; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #e2e8f0; /* Light text color */
+        }
+        /* Custom animation for title glow */
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px rgba(59, 130, 246, 0.4); }
+            50% { text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 25px rgba(59, 130, 246, 0.6); }
+        }
+        .text-glow {
+            animation: glow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Main Content Container: Adjusted to stack logo and news vertically -->
+    <main class="flex-grow flex flex-col items-center justify-center p-4 py-12">
+        
+        <!-- JEKYLL INJECTION POINT: This is where the content from index.html is inserted -->
+        {{ content }}
+
+    </main>
+    
+</body>
+</html>

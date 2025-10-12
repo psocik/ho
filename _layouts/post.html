@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; 
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+        /* Styling for the post content generated from Markdown */
+        .post-content h1, .post-content h2, .post-content h3 {
+            color: #93c5fd; /* light blue */
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .post-content ul, .post-content ol {
+            margin-left: 1.5rem;
+            list-style: disc;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-8">
+
+    <div class="max-w-3xl mx-auto py-12">
+        <header class="mb-8 border-b border-gray-700 pb-4">
+            <a href="{{ site.baseurl }}/" class="text-blue-500 hover:text-blue-300 transition duration-200 block mb-4">&larr; Back to Home</a>
+            <h1 class="text-4xl font-extrabold text-white mb-2">{{ page.title }}</h1>
+            <p class="text-gray-400 text-sm">Published on {{ page.date | date: "%B %-d, %Y" }} by {{ page.author }}</p>
+        </header>
+
+        <article class="post-content text-gray-300">
+            <!-- Jekyll injects the full post content here -->
+            {{ content }}
+        </article>
+    </div>
+
+</body>
+</html>
